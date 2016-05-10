@@ -33,3 +33,7 @@ en:
       query_placeholder: Enter a city
     search:
       page_title: "Search results for '%{query}'"
+  activerecord:
+    attributes:
+      venue:
+        full_address: Address
