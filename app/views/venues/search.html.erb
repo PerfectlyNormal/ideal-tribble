@@ -2,10 +2,19 @@
   <div class="col-lg-12">
     <h4><%= t(".page_title", query: @query) %></h4>
 
-    <ul>
-    <% @venues.each do |venue| %>
-      <li><%= link_to venue.name, venue %></li>
+    <% if @venues.empty? %>
+
+      <p><%= t(".no_results") %></p>
+      <p><%= link_to t(".go_back"), root_path %></p>
+
+    <% else %>
+
+      <ul>
+      <% @venues.each do |venue| %>
+        <li><%= link_to venue.name, venue %></li>
+      <% end %>
+      </ul>
+
     <% end %>
-    </ul>
   </div>
 </div>

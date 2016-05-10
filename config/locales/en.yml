@@ -33,6 +33,8 @@ en:
       query_placeholder: Enter a city
     search:
       page_title: "Search results for '%{query}'"
+      no_results: No matching venues was found.
+      go_back: Go back and try again
   activerecord:
     attributes:
       venue:
