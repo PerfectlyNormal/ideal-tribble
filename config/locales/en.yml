@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      home: Home
+      about: About
+      contact: Contact
+  venues:
+    index:
+      page_title: "Find a venue"
+      search: Search!
+      query_label: Search
+      query_placeholder: Enter a city
