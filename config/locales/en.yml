@@ -31,3 +31,5 @@ en:
       search: Search!
       query_label: Search
       query_placeholder: Enter a city
+    search:
+      page_title: "Search results for '%{query}'"
