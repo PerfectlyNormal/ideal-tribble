@@ -9,6 +9,8 @@ class Venue < ActiveRecord::Base
     end
   end
 
+  validates :name, presence: true
+
   after_validation :reverse_geocode,
                    if: lambda{|venue| !venue.has_address? && venue.has_coordinates? }
 
