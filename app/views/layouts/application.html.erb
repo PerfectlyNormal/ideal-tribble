@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UniversalVenues</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="active"><%= link_to t(".home"), root_url %></li>
+          <li role="presentation"><a href="#"><%= t(".about") %></a></li>
+          <li role="presentation"><a href="#"><%= t(".contact") %></a></li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">UniversalVenueFinder</h3>
+    </div>
 
-<%= yield %>
+    <%= yield %>
 
+    <p class="spacer"></p>
+
+    <footer class="footer">
+      <p>&copy; 2016 Per Christian B. Viken &lt;perchr@northblue.org&gt;.</p>
+    </footer>
+
+  </div>
 </body>
 </html>
