@@ -10,3 +10,6 @@ venues.each do |source|
     longitude: source["lng"]
   })
 end
+
+City.create(name: "Stockholm", latitude: 59.3293, longitude: 18.0686)
+City.create(name: "London",    latitude: 51.5074, longitude:  0.1278)
