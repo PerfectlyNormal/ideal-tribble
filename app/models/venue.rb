@@ -12,4 +12,14 @@ class Venue < ActiveRecord::Base
       )
     } % [longitude, latitude, distance_in_meters])
   }
+
+  def self.in_city(lookup)
+    city = City.search(lookup)
+
+    if city
+      close_to(city.latitude, city.longitude)
+    else
+      []
+    end
+  end
 end
