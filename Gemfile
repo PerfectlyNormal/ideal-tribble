@@ -13,8 +13,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'puma'
 
-gem 'geocoder', '~> 1.3.4'
-
 group :development, :test do
   gem 'byebug'
 end
