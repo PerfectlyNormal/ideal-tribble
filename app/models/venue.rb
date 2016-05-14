@@ -1,8 +1,15 @@
 class Venue < ActiveRecord::Base
   validates :name, presence: true
 
-  def self.search_by_city(query)
-    # https://robb.weblaws.org/2013/12/05/yes-rails-supports-case-insensitive-database-queries/
-    where(arel_table[:city].matches("#{query}%"))
-  end
+  scope :close_to, -> (latitude, longitude, distance_in_meters = 20000) {
+    where(%{
+      ST_DWithin(
+        ST_GeographyFromText(
+          'SRID=4326;POINT(' || venues.longitude || ' ' || venues.latitude || ')'
+        ),
+        ST_GeographyFromText('SRID=4326;POINT(%f %f)'),
+        %d
+      )
+    } % [longitude, latitude, distance_in_meters])
+  }
 end
